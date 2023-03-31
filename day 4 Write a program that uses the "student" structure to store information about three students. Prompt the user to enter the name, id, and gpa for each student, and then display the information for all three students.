@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+struct student {
+    char name[50];
+    int id;
+    float gpa;
+};
+
+int main() {
+    struct student students[3];
+    int i;
+
+    for (i = 0; i < 3; i++) {
+        printf("Enter the name of stWrite a program that uses the "student" structure to store information about three students. Prompt the user to enter the name, id, and gpa for each student, and then display the information for all three students.udent %d: ", i+1);
+        scanf("%s", students[i].name);
+        printf("Enter the ID of student %d: ", i+1);
+        scanf("%d", &students[i].id);
+        printf("Enter the GPA of student %d: ", i+1);
+        scanf("%f", &students[i].gpa);
+    }
+
+    printf("\n\n");
+
+    for (i = 0; i < 3; i++) {
+        printf("Name: %s\n", students[i].name);
+        printf("ID: %d\n", students[i].id);
+        printf("GPA: %.2f\n\n", students[i].gpa);
+    }
+
+    return 0;
+}
