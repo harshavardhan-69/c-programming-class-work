@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+union my_union {
+    int integer;
+    char string[100];
+};
+
+int main() {
+    union my_union input;
+    char buffer[100];
+    
+    printf("Enter a value: ");
+    fgets(buffer, sizeof(buffer), stdin);
+    
+    // check if input is an integer
+    if (sscanf(buffer, "%d", &input.integer) == 1) {
+        printf("You entered an integer: %d\n", input.integer);
+    }
+    // input is a string
+    else {
+        buffer[strcspn(buffer, "\n")] = '\0'; // remove newline character from buffer
+        strncpy(input.string, buffer, sizeof(input.string));
+        printf("You entered a string: %s\n", input.string);
+    }
+    return 0;
+    }
