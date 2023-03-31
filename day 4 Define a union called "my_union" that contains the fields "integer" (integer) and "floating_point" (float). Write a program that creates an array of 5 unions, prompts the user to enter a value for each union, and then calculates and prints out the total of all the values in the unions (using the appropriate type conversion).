@@ -1,0 +1,34 @@
+#include <stdio.h>
+// Define the "my_union" union
+union my_union {
+  int integer;
+  float floating_point;
+};
+
+int main() {
+  // Declare an array of 5 "my_union" objects
+  union my_union my_array[5];
+
+  // Prompt the user to enter a value for each union in the array
+  for (int i = 0; i < 5; i++) {
+    printf("Enter an integer or floating point value for union %d: ", i+1);
+    if (scanf("%d", &my_array[i].integer) != 1) {
+      scanf("%f", &my_array[i].floating_point);
+    }
+  }
+
+  // Calculate the total of all the values in the unions
+  float total = 0.0;
+  for (int i = 0; i < 5; i++) {
+    if (sizeof(my_array[i]) == sizeof(int)) {
+      total += (float) my_array[i].integer;
+    } else {
+      total += my_array[i].floating_point;
+    }
+  }
+
+  // Print out the total
+  printf("Total of all values: %f\n", total);
+
+  return 0;
+}
