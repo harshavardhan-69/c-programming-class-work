@@ -28,3 +28,4 @@ int main() {
 
   return 0;
 }
+Create a structure called "student" that contains the following fields: name (string), id (integer), and gpa
