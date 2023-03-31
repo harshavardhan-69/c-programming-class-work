@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <string.h>
+
+struct book {
+    char title[100];
+    char author[100];
+    int publication_year;
+    float price;
+};
+
+void display_books(struct book books[], int num_boCreate a program that defines a structure called "book" which has the following fields: title (string), author (string), publication year (integer), and price (float).oks) {
+    printf("Books published after 2010:\n");
+    for (int i = 0; i < num_books; i++) {
+        if (books[i].publication_year > 2010) {
+            printf("Title: %s\n", books[i].title);
+            printf("Author: %s\n", books[i].author);
+            printf("Publication Year: %d\n", books[i].publication_year);
+            printf("Price: %.2f\n\n", books[i].price);
+        }
+    }
+}
+
+int main() {
+    // example array of books
+    struct book books[5] = {
+        {"The Hunger Games", "Suzanne Collins", 2008, 8.99},
+        {"Harry Potter and the Deathly Hallows", "J.K. Rowling", 2007, 12.99},
+        {"The Fault in Our Stars", "John Green", 2012, 10.99},
+        {"Gone Girl", "Gillian Flynn", 2012, 9.99},
+        {"The Girl on the Train", "Paula Hawkins", 2015, 7.99}
+    };
+    
+    // call function to display books published after 2010
+    display_books(books, 5);
+
+    return 0;Create a program that defines a structure called "book" which has the following fields: title (string), author (string), publication year (integer), and price (float).
+}
