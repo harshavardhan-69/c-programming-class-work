@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+// Define a rectangle structure with length and width fields
+struct rectangle {
+  int length;
+  int width;
+};
+
+// Function to calculate the area of a rectangle
+int calculate_area(struct rectangle r) {
+  int area = r.length * r.width;
+  return area;
+}
+
+int main() {
+  // Create a rectangle instance
+  struct rectangle my_rectangle = {5, 10};
+
+  // Calculate and print the area of the rectangle
+  int area = calculate_area(my_rectangle);
+  printf("The area of the rectangle is %d.\n", area);
+
+  return 0;
+  }
